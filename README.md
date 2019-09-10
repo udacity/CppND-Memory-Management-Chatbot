@@ -1,8 +1,14 @@
 # CPPND: Memory Management Chatbot
 
+This is the project for the third course in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213): Memory Management.
+
 <img src="images/chatbot_demo.png"/>
 
-This is the project for the third course in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213): Memory Management. 
+The ChatBot project creates a dialogue where users can ask questions about some aspects of memory management in C++. After the knowledge base of the chatbot has been loaded from a text file, a knowledge graph representation is created in computer memory, where chatbot answer represent the graph nodes and user queries represent the graph edges. After a user query has been send to the chatbot, the Levenshtein distance is used to identify the most probable answer. The code is fully functional as-is and uses raw pointers to represent the knowledge graph and interconnections between objects throughout the project. 
+​
+There are two major student tasks in the memory management course, which are:
+1. to replace raw pointers with smart pointers where necessary according to the course guidelines and
+2. to apply the Rule of Five to the ChatBot class to enable the use of move semantics to transport the ChatBot instance from node to node during a dialogue with the user.
 
 ## Dependencies for Running Locally
 * cmake >= 3.11
