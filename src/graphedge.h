@@ -9,7 +9,7 @@ class GraphNode; // forward declaration
 class GraphEdge
 {
 private:
-    // pointers to chatbot elements
+    // data handles (not owned)
     GraphNode *_childNode;
     GraphNode *_parentNode;
 

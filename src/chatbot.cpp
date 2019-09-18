@@ -8,16 +8,58 @@
 #include "graphedge.h"
 #include "chatbot.h"
 
-void ChatBot::ReceiveUserQuery(std::string query)
+// constructor WITHOUT memory allocation
+ChatBot::ChatBot()
+{
+    // invalidate data handles
+    _image = nullptr;
+    _chatLogic = nullptr;
+    _rootNode = nullptr;
+}
+
+// constructor WITH memory allocation
+ChatBot::ChatBot(std::string filename)
+{
+    std::cout << "ChatBot Constructor" << std::endl;
+    
+    // invalidate data handles
+    _chatLogic = nullptr;
+    _rootNode = nullptr;
+
+    // load image into heap memory
+    _image = new wxBitmap(filename, wxBITMAP_TYPE_PNG);
+}
+
+ChatBot::~ChatBot()
+{
+    std::cout << "ChatBot Destructor" << std::endl;
+
+    // deallocate heap memory
+    if(_image != NULL) // Attention: wxWidgets used NULL and not nullptr
+    {
+        delete _image;
+        _image = NULL;
+    }
+}
+
+//// STUDENT CODE
+////
+
+////
+//// EOF STUDENT CODE
+
+void ChatBot::ReceiveMessageFromUser(std::string message)
 {
     // loop over all edges and keywords and compute Levenshtein distance to query
-    typedef std::pair<GraphEdge*, int> EdgeDist;
+    typedef std::pair<GraphEdge *, int> EdgeDist;
     std::vector<EdgeDist> levDists; // format is <ptr,levDist>
-    for (auto edge : _currentNode->GetEdgesToChildNodes())
+
+    for (size_t i = 0; i < _currentNode->GetNumberOfChildEdges(); ++i)
     {
+        GraphEdge *edge = _currentNode->GetChildEdgeAtIndex(i);
         for (auto keyword : edge->GetKeywords())
         {
-            EdgeDist ed{edge, ComputeLevenshteinDistance(keyword, query)};
+            EdgeDist ed{edge, ComputeLevenshteinDistance(keyword, message)};
             levDists.push_back(ed);
         }
     }
@@ -37,7 +79,7 @@ void ChatBot::ReceiveUserQuery(std::string query)
     }
 
     // tell current node to move chatbot to new node
-    _currentNode->moveChatbotToNewNode(newNode);
+    _currentNode->MoveChatbotToNewNode(newNode);
 }
 
 void ChatBot::SetCurrentNode(GraphNode *node)
@@ -52,7 +94,7 @@ void ChatBot::SetCurrentNode(GraphNode *node)
     std::string answer = answers.at(dis(generator));
 
     // send selected node answer to user
-    _chatLogic->getChatBotPanelDialog()->printChatbotResponse(answer);
+    _chatLogic->SendMessageToUser(answer);
 }
 
 int ChatBot::ComputeLevenshteinDistance(std::string s1, std::string s2)

@@ -1,6 +1,7 @@
 #ifndef CHATBOT_H_
 #define CHATBOT_H_
 
+#include <wx/bitmap.h>
 #include <string>
 
 class GraphNode; // forward declaration
@@ -9,8 +10,10 @@ class ChatLogic; // forward declaration
 class ChatBot
 {
 private:
+    // data handles (owned)
+    wxBitmap *_image; // avatar image
 
-    // pointers to chatbot elements
+    // data handles (not owned)
     GraphNode *_currentNode;
     GraphNode *_rootNode;
     ChatLogic *_chatLogic;
@@ -20,16 +23,24 @@ private:
 
 public:
     // constructors / destructors
-    ChatBot() {}
+    ChatBot();                     // constructor WITHOUT memory allocation
+    ChatBot(std::string filename); // constructor WITH memory allocation
+    ~ChatBot();
+
+    //// STUDENT CODE
+    ////
+
+    ////
+    //// EOF STUDENT CODE
 
     // getters / setters
     void SetCurrentNode(GraphNode *node);
     void SetRootNode(GraphNode *rootNode) { _rootNode = rootNode; }
-    void SetChatLogic(ChatLogic *chatLogic) { _chatLogic = chatLogic; }
+    void SetChatLogicHandle(ChatLogic *chatLogic) { _chatLogic = chatLogic; }
+    wxBitmap *GetImageHandle() { return _image; }
 
-    // proprietary functions
-    void ReceiveUserQuery(std::string query);
-    
+    // communication
+    void ReceiveMessageFromUser(std::string message);
 };
 
 #endif /* CHATBOT_H_ */

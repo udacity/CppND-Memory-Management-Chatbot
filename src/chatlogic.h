@@ -10,25 +10,30 @@ class ChatBot;
 class GraphEdge;
 class GraphNode;
 
-
 class ChatLogic
 {
 private:
+    //// STUDENT CODE
+    ////
+
+    // data handles (owned)
+    std::vector<GraphNode *> _nodes;
+    std::vector<GraphEdge *> _edges;
+
+    ////
+    //// EOF STUDENT CODE
+
+    // data handles (not owned)
+    GraphNode *_currentNode;
+    ChatBot *_chatBot;
+    ChatBotPanelDialog *_panelDialog;
+
     // proprietary type definitions
     typedef std::vector<std::pair<std::string, std::string>> tokenlist;
 
-    // pointers to chatbot elements
-    std::vector<GraphNode *> _nodes;
-    std::vector<GraphEdge *> _edges;
-    GraphNode *_currentNode;
-    ChatBot *_chatbot;
-    ChatBotPanelDialog *_chatBotPanelDialog;
-
     // proprietary functions
     template <typename T>
-    T *AddToElementList(int id, std::vector<T *> &elems); // checks wether a given edge or node already exist based on their id
-    template <typename T>
-    void addAllTokensToElement(std::string tokenID, tokenlist &tokens, T *element);
+    void AddAllTokensToElement(std::string tokenID, tokenlist &tokens, T &element);
 
 public:
     // constructor / destructor
@@ -36,12 +41,14 @@ public:
     ~ChatLogic();
 
     // getter / setter
-    ChatBotPanelDialog *getChatBotPanelDialog() { return _chatBotPanelDialog; }
-    ChatBot *getChatBot() { return _chatbot; }
-    void setChatBotPanelDialog(ChatBotPanelDialog *dialog) { _chatBotPanelDialog = dialog; }
+    void SetPanelDialogHandle(ChatBotPanelDialog *panelDialog);
+    void SetChatbotHandle(ChatBot *chatbot);
 
     // proprietary functions
     void LoadAnswerGraphFromFile(std::string filename);
+    void SendMessageToChatbot(std::string message);
+    void SendMessageToUser(std::string message);
+    wxBitmap *GetImageFromChatbot();
 };
 
 #endif /* CHATLOGIC_H_ */

@@ -13,8 +13,13 @@ private:
     wxBoxSizer *_dialogSizer;
     wxBitmap _image;
 
-    //// ENTRY POINT FOR STUDENT CODE
+    //// STUDENT CODE
+    ////
+
     ChatLogic *_chatLogic;
+
+    ////
+    //// EOF STUDENT CODE
 
 public:
     // constructor / destructor
@@ -22,7 +27,7 @@ public:
     ~ChatBotPanelDialog();
 
     // getter / setter
-    ChatLogic *getChatLogic() { return _chatLogic; }
+    ChatLogic *GetChatLogicHandle() { return _chatLogic; }
 
     // events
     void paintEvent(wxPaintEvent &evt);
@@ -31,7 +36,7 @@ public:
 
     // proprietary functions
     void AddDialogItem(wxString text, bool isFromUser = true);
-    void printChatbotResponse(std::string response);
+    void PrintChatbotResponse(std::string response);
 
     DECLARE_EVENT_TABLE()
 };
