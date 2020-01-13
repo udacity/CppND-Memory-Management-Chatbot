@@ -45,7 +45,7 @@ ChatBot::~ChatBot()
 //// STUDENT CODE
 ////
 
-// Implements Copy Constructor
+// Copy Constructor
 ChatBot::ChatBot(const ChatBot &source) {
     std::cout << "ChatBot Copy Constructor" << std::endl;
 
@@ -55,6 +55,25 @@ ChatBot::ChatBot(const ChatBot &source) {
     _image = source._image;
 }
 
+// Copy Assignment Operator
+ChatBot &ChatBot::operator=(const ChatBot &source)
+{
+    std::cout << "ASSIGNING content of instance " << &source << " to instance " << this << std::endl;
+
+    if (this == &source) { return *this; }
+
+    this->_image = nullptr;
+    this->_chatLogic = nullptr;
+    this->_rootNode = nullptr;
+
+    // Copy Data
+    this->_chatLogic = source._chatLogic;
+    this->_rootNode = source._rootNode;
+    this->_image = source._image;
+    return *this;
+}
+
+// Move Constructor
 ChatBot::ChatBot(ChatBot &&source)
 {
     std::cout << "MOVING (c’tor) instance " << &source << " to instance " << this << std::endl;
@@ -63,6 +82,21 @@ ChatBot::ChatBot(ChatBot &&source)
     _rootNode = source._rootNode;
     _image = source._image;
 }
+
+// Move Assignment Operator
+ChatBot &ChatBot::operator=(ChatBot &&source)
+{
+  std::cout << "MOVING (assign) instance " << &source << " to instance " << this << std::endl;
+  if(this == &source) { return *this; }
+
+  // Copy Data
+  this->_chatLogic = source._chatLogic;
+  this->_rootNode = source._rootNode;
+  this->_image = source._image;
+
+  return *this;
+}
+
 ////
 //// EOF STUDENT CODE
 

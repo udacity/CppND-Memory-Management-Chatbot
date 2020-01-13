@@ -28,26 +28,9 @@ public:
     ChatBot(std::string filename);  // constructor WITH memory allocation
     ~ChatBot();
     ChatBot(const ChatBot &source); // copy constructor
+    ChatBot &operator=(const ChatBot &source); // copy assignment
     ChatBot(ChatBot &&source);      // move constructor
-
-    // TODO: Is this the best place to implement copy assignment operator?
-    ChatBot &operator=(const ChatBot &source)
-    {
-        std::cout << "ASSIGNING content of instance " << &source << " to instance " << this << std::endl;
-
-        if (this == &source) { return *this; }
-
-        this->_image = nullptr;
-        this->_chatLogic = nullptr;
-        this->_rootNode = nullptr;
-
-        // Copy Data
-        this->_chatLogic = source._chatLogic;
-        this->_rootNode = source._rootNode;
-        this->_image = source._image;
-        return *this;
-    }
-
+    ChatBot &operator=(ChatBot &&source); // move assignment operator
 
     // getters / setters
     void SetCurrentNode(GraphNode *node);
