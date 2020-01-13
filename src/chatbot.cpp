@@ -49,14 +49,20 @@ ChatBot::~ChatBot()
 ChatBot::ChatBot(const ChatBot &source) {
     std::cout << "ChatBot Copy Constructor" << std::endl;
 
-    // invalidate data handles
-    ChatLogic _chatLogic = *source._chatLogic;
-    GraphNode _rootNode = *source._rootNode;
-
-    // load image into heap memory
+    // Copy Data
+    _chatLogic = source._chatLogic;
+    _rootNode = source._rootNode;
     _image = source._image;
 }
 
+ChatBot::ChatBot(ChatBot &&source)
+{
+    std::cout << "MOVING (c’tor) instance " << &source << " to instance " << this << std::endl;
+    // Copy Data
+    _chatLogic = source._chatLogic;
+    _rootNode = source._rootNode;
+    _image = source._image;
+}
 ////
 //// EOF STUDENT CODE
 
