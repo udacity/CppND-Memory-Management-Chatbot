@@ -45,6 +45,18 @@ ChatBot::~ChatBot()
 //// STUDENT CODE
 ////
 
+// Implements Copy Constructor
+ChatBot::ChatBot(const ChatBot &source) {
+    std::cout << "ChatBot Copy Constructor" << std::endl;
+
+    // invalidate data handles
+    ChatLogic _chatLogic = *source._chatLogic;
+    GraphNode _rootNode = *source._rootNode;
+
+    // load image into heap memory
+    _image = source._image;
+}
+
 ////
 //// EOF STUDENT CODE
 
