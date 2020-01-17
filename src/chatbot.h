@@ -1,14 +1,15 @@
 #ifndef CHATBOT_H_
 #define CHATBOT_H_
 
-#include <wx/bitmap.h>
 #include <string>
+#include <wx/bitmap.h>
 
 class GraphNode; // forward declaration
 class ChatLogic; // forward declaration
 
-class ChatBot {
-private:
+class ChatBot
+{
+  private:
     // data handles (owned)
     wxBitmap *_image; // avatar image
 
@@ -20,26 +21,35 @@ private:
     // proprietary functions
     int ComputeLevenshteinDistance(std::string s1, std::string s2);
 
-public:
+  public:
     // constructors / destructors
-    ChatBot();                     // constructor WITHOUT memory allocation
+    ChatBot();                              // constructor WITHOUT memory allocation
     explicit ChatBot(std::string filename); // constructor WITH memory allocation
     ~ChatBot();
 
-    ChatBot(ChatBot &other); // copy constructor
-    ChatBot &operator=(ChatBot &other);// copy assignment
+    ChatBot(ChatBot &other);            // copy constructor
+    ChatBot &operator=(ChatBot &other); // copy assignment
 
-    ChatBot(ChatBot &&other) noexcept; // move constructor
+    ChatBot(ChatBot &&other) noexcept;            // move constructor
     ChatBot &operator=(ChatBot &&other) noexcept; // move assignment
 
     // getters / setters
     void SetCurrentNode(GraphNode *node);
 
-    void SetRootNode(GraphNode *rootNode) { _rootNode = rootNode; }
+    void SetRootNode(GraphNode *rootNode)
+    {
+        _rootNode = rootNode;
+    }
 
-    void SetChatLogicHandle(ChatLogic *chatLogic) { _chatLogic = chatLogic; }
+    void SetChatLogicHandle(ChatLogic *chatLogic)
+    {
+        _chatLogic = chatLogic;
+    }
 
-    wxBitmap *GetImageHandle() { return _image; }
+    wxBitmap *GetImageHandle()
+    {
+        return _image;
+    }
 
     // communication
     void ReceiveMessageFromUser(std::string message);
