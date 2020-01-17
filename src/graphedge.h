@@ -19,7 +19,7 @@ private:
     
 
 public:
-    // constructor / desctructor
+    // constructor / destructor
     GraphEdge(int id);
 
     // getter / setter
