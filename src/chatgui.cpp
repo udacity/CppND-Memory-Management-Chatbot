@@ -134,11 +134,8 @@ ChatBotPanelDialog::ChatBotPanelDialog(wxWindow *parent, wxWindowID id) : wxScro
 
 ChatBotPanelDialog::~ChatBotPanelDialog()
 {
-    /* TODO: delete these comments */
     //// STUDENT CODE
     ////
-
-    //    delete _chatLogic;
 
     ////
     //// EOF STUDENT CODE

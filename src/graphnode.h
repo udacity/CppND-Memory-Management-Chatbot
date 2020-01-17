@@ -60,7 +60,7 @@ class GraphNode
     //// STUDENT CODE
     ////
 
-    void MoveChatbotHere(std::unique_ptr<ChatBot> chatbot);
+    void MoveChatbotHere(std::unique_ptr<ChatBot> chatBot);
 
     ////
     //// EOF STUDENT CODE

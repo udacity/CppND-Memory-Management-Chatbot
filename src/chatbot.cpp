@@ -71,7 +71,7 @@ ChatBot &ChatBot::operator=(ChatBot &other)
     return *this;
 }
 
-ChatBot::ChatBot(ChatBot &&other) noexcept
+ChatBot::ChatBot(ChatBot &&other)
 {
     std::cout << "ChatBot Move-Constructor" << std::endl;
 
@@ -82,7 +82,7 @@ ChatBot::ChatBot(ChatBot &&other) noexcept
     other._image = nullptr;
 }
 
-ChatBot &ChatBot::operator=(ChatBot &&other) noexcept
+ChatBot &ChatBot::operator=(ChatBot &&other)
 {
     std::cout << "ChatBot Move-Assignment" << std::endl;
 

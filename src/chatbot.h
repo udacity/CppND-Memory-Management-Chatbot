@@ -30,8 +30,8 @@ class ChatBot
     ChatBot(ChatBot &other);            // copy constructor
     ChatBot &operator=(ChatBot &other); // copy assignment
 
-    ChatBot(ChatBot &&other) noexcept;            // move constructor
-    ChatBot &operator=(ChatBot &&other) noexcept; // move assignment
+    ChatBot(ChatBot &&other);            // move constructor
+    ChatBot &operator=(ChatBot &&other); // move assignment
 
     // getters / setters
     void SetCurrentNode(GraphNode *node);

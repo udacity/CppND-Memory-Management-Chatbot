@@ -165,8 +165,8 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
                             AddAllTokensToElement("KEYWORD", tokens, *edge);
 
                             // store reference in child node and parent node
-                            (*childNode)->AddEdgeToParentNode(edge.get());
-                            (*parentNode)->AddEdgeToChildNode(std::move(edge));
+                            (*childNode)->AddEdgeToParentNode(edge.get());      // not owned
+                            (*parentNode)->AddEdgeToChildNode(std::move(edge)); // owned
                         }
 
                         ////
@@ -211,10 +211,10 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
         }
     }
 
+    // create instance of chatbot
     auto chatBot = std::make_unique<ChatBot>("../images/chatbot.png");
 
-    // create instance of chatbot
-    _chatBot = chatBot.get();
+    this->SetChatbotHandle(chatBot.get());
 
     // add pointer to chatlogic so that chatbot answers can be passed on to the GUI
     chatBot->SetChatLogicHandle(this);
