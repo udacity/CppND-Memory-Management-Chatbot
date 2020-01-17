@@ -4,6 +4,7 @@
 #include "chatbot.h"
 #include <string>
 #include <vector>
+#include <memory>
 
 // forward declarations
 class GraphEdge;

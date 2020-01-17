@@ -50,7 +50,7 @@ ChatBot::ChatBot(ChatBot &other)
     _rootNode = nullptr;
 
     _image = other._image;
-    other._image = nullptr;
+    other._image = NULL;  // Attention: wxWidgets used NULL and not nullptr
 }
 
 ChatBot &ChatBot::operator=(ChatBot &other)
@@ -66,7 +66,7 @@ ChatBot &ChatBot::operator=(ChatBot &other)
     _rootNode = nullptr;
 
     _image = other._image;
-    other._image = nullptr;
+    other._image = NULL; // Attention: wxWidgets used NULL and not nullptr
 
     return *this;
 }
@@ -79,7 +79,7 @@ ChatBot::ChatBot(ChatBot &&other)
     _rootNode = nullptr;
 
     _image = other._image;
-    other._image = nullptr;
+    other._image = NULL; // Attention: wxWidgets used NULL and not nullptr
 }
 
 ChatBot &ChatBot::operator=(ChatBot &&other)
@@ -95,7 +95,7 @@ ChatBot &ChatBot::operator=(ChatBot &&other)
     _rootNode = nullptr;
 
     _image = other._image;
-    other._image = nullptr;
+    other._image = NULL;  // Attention: wxWidgets used NULL and not nullptr
 
     return *this;
 }
