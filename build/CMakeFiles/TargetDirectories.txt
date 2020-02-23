@@ -1,0 +1,3 @@
+/mnt/CppWorkspace/NanodegreeWS/CppND-Memory-Management-Chatbot/build/CMakeFiles/rebuild_cache.dir
+/mnt/CppWorkspace/NanodegreeWS/CppND-Memory-Management-Chatbot/build/CMakeFiles/membot.dir
+/mnt/CppWorkspace/NanodegreeWS/CppND-Memory-Management-Chatbot/build/CMakeFiles/edit_cache.dir
