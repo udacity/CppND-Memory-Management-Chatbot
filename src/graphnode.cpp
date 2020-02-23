@@ -4,7 +4,7 @@
 
 GraphNode::GraphNode(int id)
 {
-    std::cout << "GraphNode Constructor" << std::endl;
+    //std::cout << "GraphNode Constructor" << std::endl;
 
     _id = id;
 }
@@ -13,7 +13,7 @@ GraphNode::~GraphNode()
 {
     //// STUDENT CODE
     ////
-    std::cout << "GraphNode Destructor" << std::endl;
+    //std::cout << "GraphNode Destructor" << std::endl;
  
  //   std::cout << "Chatbot address " << _chatBot << std::endl;
  //   if (_chatBot != nullptr){
