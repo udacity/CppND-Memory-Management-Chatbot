@@ -16,7 +16,7 @@ ChatLogic::ChatLogic()
 {
     //// STUDENT CODE
     ////
-
+    std::cout << "ChatLogic Constructor" << std::endl;
     // create instance of chatbot
     _chatBot = new ChatBot("../images/chatbot.png");
 
@@ -32,19 +32,27 @@ ChatLogic::~ChatLogic()
     //// STUDENT CODE
     ////
 
+    std::cout << "ChatLogic Destructor" << std::endl;
     // delete chatbot instance
-    delete _chatBot;
-
+    std::cout << "Chatbot address " << _chatBot << std::endl;
+    if (_chatBot != nullptr){
+        std::cout << "Delete Chatbot in ChatLogic" << std::endl;
+        delete _chatBot; 
+        _chatBot = nullptr;
+        std::cout << "Chatbot address " << _chatBot << std::endl;
+    }
     // delete all nodes
     for (auto it = std::begin(_nodes); it != std::end(_nodes); ++it)
-    {
+    {   
+        std::cout << "Delete Node with ID: " << (*it)->GetID() << std::endl;
         delete *it;
     }
 
     // delete all edges
     for (auto it = std::begin(_edges); it != std::end(_edges); ++it)
     {
-        delete *it;
+        std::cout << "Delete Edge with ID: " << (*it)->GetID() << std::endl;
+        delete *it;  
     }
 
     ////

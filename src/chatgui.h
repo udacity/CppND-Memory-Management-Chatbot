@@ -68,6 +68,7 @@ private:
 public:
     // constructor / desctructor
     ChatBotFrame(const wxString &title);
+    ~ChatBotFrame(); //new
 };
 
 // control panel for background image display
