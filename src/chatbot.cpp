@@ -11,6 +11,7 @@
 // constructor WITHOUT memory allocation
 ChatBot::ChatBot()
 {
+    std::cout << "ChatBot Default Constructor" << std::endl;
     // invalidate data handles
     _image = nullptr;
     _chatLogic = nullptr;
@@ -21,32 +22,59 @@ ChatBot::ChatBot()
 ChatBot::ChatBot(std::string filename)
 {
     std::cout << "ChatBot Constructor" << std::endl;
-    
+
     // invalidate data handles
     _chatLogic = nullptr;
     _rootNode = nullptr;
 
     // load image into heap memory
-    _image = new wxBitmap(filename, wxBITMAP_TYPE_PNG);
+    _image = std::make_shared<wxBitmap>(filename, wxBITMAP_TYPE_PNG);
+}
+
+ChatBot::ChatBot(ChatBot &source) {
+  std::cout << "ChatBot Copy Constructor" << std::endl;
+
+  _image = source.GetSharedResource();
+  _chatLogic = nullptr;
+  _rootNode = nullptr;
+}
+
+ChatBot::ChatBot(ChatBot &&source) {
+  std::cout << "ChatBot Move Constructor" << std::endl;
+
+  _image = source.GetSharedResource();
+  _chatLogic = nullptr;
+  _rootNode = nullptr;
+}
+
+ChatBot &ChatBot::operator=(ChatBot &source) {
+  std::cout << "ChatBot Copy Operator" << std::endl;
+  if (this == &source)
+    return *this;
+
+  _image = source.GetSharedResource();
+  _chatLogic = nullptr;
+  _rootNode = nullptr;
+
+  return *this;
+}
+
+ChatBot &ChatBot::operator=(ChatBot &&source) {
+  std::cout << "ChatBot Move Operator" << std::endl;
+  if (this == &source)
+    return *this;
+
+  _image = source.GetSharedResource();
+  _chatLogic = nullptr;
+  _rootNode = nullptr;
+
+  return *this;
 }
 
 ChatBot::~ChatBot()
 {
     std::cout << "ChatBot Destructor" << std::endl;
-
-    // deallocate heap memory
-    if(_image != NULL) // Attention: wxWidgets used NULL and not nullptr
-    {
-        delete _image;
-        _image = NULL;
-    }
 }
-
-//// STUDENT CODE
-////
-
-////
-//// EOF STUDENT CODE
 
 void ChatBot::ReceiveMessageFromUser(std::string message)
 {
