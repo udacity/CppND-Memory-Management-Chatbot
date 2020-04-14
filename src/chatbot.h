@@ -29,6 +29,8 @@ public:
 
     //// STUDENT CODE
     ////
+	ChatBot(const ChatBot &source);	// Rule of three: declaring copy constructor since destructor is present
+	ChatBot& operator=(const ChatBot &source);	// Rule of three: declaring copy since destructor is present
 
     ////
     //// EOF STUDENT CODE

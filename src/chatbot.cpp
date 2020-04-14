@@ -12,7 +12,7 @@
 ChatBot::ChatBot()
 {
     // invalidate data handles
-    _image = nullptr;
+    _image = NULL;
     _chatLogic = nullptr;
     _rootNode = nullptr;
 }
@@ -44,6 +44,40 @@ ChatBot::~ChatBot()
 
 //// STUDENT CODE
 ////
+ChatBot::ChatBot(const ChatBot &source)
+{
+	std::cout << "Chatbot Copy Constructor called to copy content of instance " << &source << " to instance " << this << std::endl;
+	if (_image != NULL) // Attention: wxWidgets used NULL and not nullptr
+	{
+		delete _image;
+		_image = NULL;
+	}
+
+	_chatLogic = source._chatLogic;
+	_rootNode = source._rootNode;
+	_image = source._image;
+}
+
+ChatBot& ChatBot::operator=(const ChatBot &source)
+{
+	std::cout << "Chatbot Copy Assignment operator called to assign content of instance" << &source << "to instance " << this << std::endl;
+	if (this == &source)
+	{
+		return *this;
+	}
+
+	if (_image != NULL) // Attention: wxWidgets used NULL and not nullptr
+	{
+		delete _image;
+		_image = NULL;
+	}
+
+	_chatLogic = source._chatLogic;
+	_rootNode = source._rootNode;
+	_image = source._image;
+
+	return *this;
+}
 
 ////
 //// EOF STUDENT CODE
