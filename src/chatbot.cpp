@@ -45,6 +45,78 @@ ChatBot::~ChatBot()
 //// STUDENT CODE
 ////
 
+ChatBot::ChatBot(const ChatBot &source){ 			// Copy constructor
+	std::cout << "ChatBot Copy Constructor\n";
+  	// Owned data handles:
+  	_image = new wxBitmap();
+  	*_image = *source._image;
+  	// Non-owned data handles:
+    _currentNode 	= source._currentNode;
+    _rootNode		= source._rootNode;
+    _chatLogic		= source._chatLogic;
+}
+
+ChatBot &ChatBot::operator=(const ChatBot &source){				// Copy assignment operator
+	std::cout << "ChatBot Copy Assignment Operator\n";
+  	if (this == &source){ return *this; } // Self-assignment safeguard
+  	// Owned data members:
+  	delete _image;
+  	_image = new wxBitmap();
+  	*_image = *source._image;
+  	// Non-ownded data members:
+  	_currentNode 	= source._currentNode;
+    _rootNode		= source._rootNode;
+    _chatLogic		= source._chatLogic;
+  	
+  	return *this;
+}
+
+ChatBot::ChatBot(ChatBot &&source){			// Move constructor
+	std::cout << "ChatBot Move Constructor\n";
+  
+  	// Exchange handles:
+  	_image = source._image;
+  	_currentNode 	= source._currentNode;
+    _rootNode		= source._rootNode;
+    _chatLogic		= source._chatLogic;
+  
+  	// Invalidate source handles:
+  	source._image = NULL;
+  	source._currentNode = nullptr;
+  	source._rootNode = nullptr;
+  	source._chatLogic = nullptr;
+  	
+  	// Give a handle to this instance to chatlogic:
+  	_chatLogic->SetChatbotHandle(this);
+}
+
+ChatBot &ChatBot::operator=(ChatBot &&source){			// Move assignment operator
+	std::cout << "ChatBot Move Assignment Operator\n";
+  	
+  	if (this == &source) { return *this; } // Self copy guard
+  	
+  	// Invalidate existing resources:
+  	delete _image;
+  	
+  	// Exchange handles:
+  	_image = source._image;
+  	_currentNode 	= source._currentNode;
+    _rootNode		= source._rootNode;
+    _chatLogic		= source._chatLogic;
+  
+  	// Invalidate source handles:
+  	source._image = NULL;
+  	source._currentNode = nullptr;
+  	source._rootNode = nullptr;
+  	source._chatLogic = nullptr;
+  	
+  	// Give a handle to this instance to chatlogic:
+  	_chatLogic->SetChatbotHandle(this);
+  
+  	// return current handle:
+  	return *this;
+}
+
 ////
 //// EOF STUDENT CODE
 
