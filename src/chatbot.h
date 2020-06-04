@@ -7,6 +7,8 @@
 class GraphNode; // forward declaration
 class ChatLogic; // forward declaration
 
+//Test
+
 class ChatBot
 {
 private:
