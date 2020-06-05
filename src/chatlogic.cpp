@@ -46,11 +46,13 @@ ChatLogic::~ChatLogic()
     */
 
     // delete all edges
+  	// Remove delete, now using unique_ptr so that graphnodes have sole ownership
+  	/*
     for (auto it = std::begin(_edges); it != std::end(_edges); ++it)
     {
         delete *it;
     }
-
+	*/
     ////
     //// EOF STUDENT CODE
 }
@@ -166,18 +168,21 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
                             auto childNode = std::find_if(_nodes.begin(), _nodes.end(), [&childToken](std::unique_ptr<GraphNode> const &node) { return node->GetID() == std::stoi(childToken->second); });
 
                             // create new edge
-                            GraphEdge *edge = new GraphEdge(id);
+                          	// Change raw edge pointer to unique_ptr:
+                            //GraphEdge *edge = new GraphEdge(id);
+                          	std::unique_ptr<GraphEdge> edge = std::make_unique<GraphEdge>(id);
                           	// Use get() for to set both the child and parent nodes to the edge, since we are now using unique_ptr, not raw:
                             edge->SetChildNode(childNode->get()); 
                             edge->SetParentNode(parentNode->get());
-                            _edges.push_back(edge);
+                            //_edges.push_back(edge); //Don't need this anymore
 
                             // find all keywords for current node
                             AddAllTokensToElement("KEYWORD", tokens, *edge);
 
                             // store reference in child node and parent node
-                            (*childNode)->AddEdgeToParentNode(edge);
-                            (*parentNode)->AddEdgeToChildNode(edge);
+                          	// Have to change the parameter to use get():
+                            (*childNode)->AddEdgeToParentNode(edge.get());
+                            (*parentNode)->AddEdgeToChildNode(std::move(edge)); // Had to use move, since we are now working with unique_ptr to childedges
                         }
 
                         ////
