@@ -49,7 +49,8 @@ ChatBot::ChatBot(const ChatBot &source){ 			// Copy constructor
 	std::cout << "ChatBot Copy Constructor\n";
   	// Owned data handles:
   	_image = new wxBitmap();
-  	*_image = *source._image;
+  	*_image = *source._image; 
+  	std::cout << "Address of image: " << &_image << "\n";
   	// Non-owned data handles:
     _currentNode 	= source._currentNode;
     _rootNode		= source._rootNode;
