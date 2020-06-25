@@ -12,7 +12,7 @@
 ChatBot::ChatBot()
 {
     // invalidate data handles
-    _image = nullptr;
+    _image = NULL;
     _chatLogic = nullptr;
     _rootNode = nullptr;
 }
@@ -44,7 +44,55 @@ ChatBot::~ChatBot()
 
 //// STUDENT CODE
 ////
+ChatBot::ChatBot(ChatBot const& other) : // copy constructor
+    _image{nullptr},
+    _rootNode{nullptr}
+{
+    std::cout << "ChatBot copy constructor" << std::endl;
 
+    if (other._image != NULL) {
+        _image = other._image;
+    }
+    if (other._rootNode != NULL) {
+        _rootNode = other._rootNode;
+    }
+}
+
+ChatBot& ChatBot::operator=(ChatBot const& other) // copy assignment
+{
+    std::cout << "ChatBot copy assignment" << std::endl;
+
+    wxBitmap* imgTemp = other._image;
+    delete _image;
+    _image = imgTemp;
+
+    GraphNode * rootTemp = other._rootNode;
+    delete _rootNode;
+    _rootNode = rootTemp;
+
+    return *this;
+}
+
+ChatBot::ChatBot(ChatBot&& other) noexcept : _image{other._image} , _rootNode{other._rootNode}// move
+{
+    std::cout << "ChatBot move operator" << std::endl;
+    other._image = NULL;
+    other._rootNode = NULL;
+}
+
+ChatBot& ChatBot::operator=(ChatBot&& other) noexcept // move assignment
+{
+    std::cout << "ChatBot move assignment" << std::endl;
+    if (this != &other) {
+        delete _image;
+        _image = other._image;
+        other._image = NULL;
+        delete _rootNode;
+        _rootNode = other._rootNode;
+        other._rootNode = NULL;
+    }
+    return *this;
+}
 ////
 //// EOF STUDENT CODE
 
