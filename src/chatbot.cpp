@@ -46,15 +46,20 @@ ChatBot::~ChatBot()
 ////
 ChatBot::ChatBot(ChatBot const& other) : // copy constructor
     _image{nullptr},
-    _rootNode{nullptr}
+    _rootNode{nullptr},
+    _chatLogic{nullptr}
 {
     std::cout << "ChatBot copy constructor" << std::endl;
 
     if (other._image != NULL) {
         _image = other._image;
     }
-    if (other._rootNode != NULL) {
+    if (other._rootNode != nullptr) {
         _rootNode = other._rootNode;
+    }
+    if (other._chatLogic != nullptr) {
+        _chatLogic = other._chatLogic;
+        _chatLogic->SetChatbotHandle(this);
     }
 }
 
@@ -67,17 +72,22 @@ ChatBot& ChatBot::operator=(ChatBot const& other) // copy assignment
     _image = imgTemp;
 
     GraphNode * rootTemp = other._rootNode;
-    delete _rootNode;
     _rootNode = rootTemp;
+
+    ChatLogic * chatLogicTemp = other._chatLogic;
+    _chatLogic = chatLogicTemp;
+    _chatLogic->SetChatbotHandle(this);
 
     return *this;
 }
 
-ChatBot::ChatBot(ChatBot&& other) noexcept : _image{other._image} , _rootNode{other._rootNode}// move
+ChatBot::ChatBot(ChatBot&& other) noexcept : _image{other._image} , _rootNode{other._rootNode}, _chatLogic{other._chatLogic}// move
 {
     std::cout << "ChatBot move operator" << std::endl;
     other._image = NULL;
-    other._rootNode = NULL;
+    other._rootNode = nullptr;
+    other._chatLogic = nullptr;
+    _chatLogic->SetChatbotHandle(this);
 }
 
 ChatBot& ChatBot::operator=(ChatBot&& other) noexcept // move assignment
@@ -87,9 +97,13 @@ ChatBot& ChatBot::operator=(ChatBot&& other) noexcept // move assignment
         delete _image;
         _image = other._image;
         other._image = NULL;
-        delete _rootNode;
+
         _rootNode = other._rootNode;
-        other._rootNode = NULL;
+        other._rootNode = nullptr;
+
+        _chatLogic = other._chatLogic;
+        other._chatLogic = nullptr;
+        _chatLogic->SetChatbotHandle(this);
     }
     return *this;
 }

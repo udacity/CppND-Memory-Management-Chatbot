@@ -6,6 +6,24 @@
 
 #IncludeRegexTransform: 
 
+/Users/hud10837/cppCourse/chatbot/CppND-Memory-Management-Chatbot/src/chatbot.cpp
+iostream
+-
+random
+-
+algorithm
+-
+ctime
+-
+chatlogic.h
+/Users/hud10837/cppCourse/chatbot/CppND-Memory-Management-Chatbot/src/chatlogic.h
+graphnode.h
+/Users/hud10837/cppCourse/chatbot/CppND-Memory-Management-Chatbot/src/graphnode.h
+graphedge.h
+/Users/hud10837/cppCourse/chatbot/CppND-Memory-Management-Chatbot/src/graphedge.h
+chatbot.h
+/Users/hud10837/cppCourse/chatbot/CppND-Memory-Management-Chatbot/src/chatbot.h
+
 /Users/hud10837/cppCourse/chatbot/CppND-Memory-Management-Chatbot/src/chatbot.h
 wx/bitmap.h
 -
@@ -15,30 +33,6 @@ string
 /Users/hud10837/cppCourse/chatbot/CppND-Memory-Management-Chatbot/src/chatgui.h
 wx/wx.h
 -
-
-/Users/hud10837/cppCourse/chatbot/CppND-Memory-Management-Chatbot/src/chatlogic.cpp
-fstream
--
-sstream
--
-iostream
--
-vector
--
-iterator
--
-tuple
--
-algorithm
--
-graphedge.h
-/Users/hud10837/cppCourse/chatbot/CppND-Memory-Management-Chatbot/src/graphedge.h
-graphnode.h
-/Users/hud10837/cppCourse/chatbot/CppND-Memory-Management-Chatbot/src/graphnode.h
-chatbot.h
-/Users/hud10837/cppCourse/chatbot/CppND-Memory-Management-Chatbot/src/chatbot.h
-chatlogic.h
-/Users/hud10837/cppCourse/chatbot/CppND-Memory-Management-Chatbot/src/chatlogic.h
 
 /Users/hud10837/cppCourse/chatbot/CppND-Memory-Management-Chatbot/src/chatlogic.h
 vector
