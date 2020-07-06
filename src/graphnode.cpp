@@ -10,8 +10,13 @@ GraphNode::~GraphNode()
 {
     //// STUDENT CODE
     ////
+    
+    /*
+     * The GraphNode does not get paid enough 
+     * to decide when the chat bot gets deleted. 
+     */
 
-    delete _chatBot; 
+    //// delete _chatBot; 
 
     ////
     //// EOF STUDENT CODE

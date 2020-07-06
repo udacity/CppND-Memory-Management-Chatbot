@@ -1,0 +1,5 @@
+*.txt
+.vscode/
+build/**
+valgrind_command
+
