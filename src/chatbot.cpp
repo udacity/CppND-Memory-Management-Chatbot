@@ -102,10 +102,10 @@ void ChatBot::ReceiveMessageFromUser(std::string message)
 
     for (size_t i = 0; i < _currentNode->GetNumberOfChildEdges(); ++i)
     {
-        GraphEdge *edge = _currentNode->GetChildEdgeAtIndex(i);
+        const std::unique_ptr<GraphEdge>& edge = _currentNode->GetChildEdgeAtIndex(i);
         for (auto keyword : edge->GetKeywords())
         {
-            EdgeDist ed{edge, ComputeLevenshteinDistance(keyword, message)};
+            EdgeDist ed{edge.get(), ComputeLevenshteinDistance(keyword, message)};
             levDists.push_back(ed);
         }
     }
