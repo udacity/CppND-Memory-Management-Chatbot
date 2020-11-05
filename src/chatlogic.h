@@ -5,9 +5,9 @@
 #include <vector>
 #include <string>
 #include "chatgui.h"
+#include "chatbot.h"
 
 // forward declarations
-class ChatBot;
 class GraphEdge;
 class GraphNode;
 
