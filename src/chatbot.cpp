@@ -70,10 +70,13 @@ ChatBot &ChatBot::operator=(const ChatBot &source)
 // move constructor
 ChatBot::ChatBot(ChatBot &&source)
 {
-    std::cout << "MOVING instance " << &source << " to instance " << this << std::endl;
+    std::cout << "ChatBot Move Constructor" << std::endl;
     _image = source._image;
     _rootNode = source._rootNode;
     _chatLogic = source._chatLogic;
+
+    _chatLogic->SetChatbotHandle(this);
+
     source._image = NULL;
     source._rootNode = nullptr;
     source._chatLogic = nullptr;
@@ -82,15 +85,20 @@ ChatBot::ChatBot(ChatBot &&source)
 // move assignment operator
 ChatBot &ChatBot::operator=(ChatBot &&source)
 {
-    std::cout << "MOVIE-ASSIGNING instance " << &source << " to instance " << this << std::endl;
+    std::cout << "ChatBot Move Assignment Operator" << std::endl;
     if(this == &source) return *this;
     delete _image;
     _image = source._image;
     _rootNode = source._rootNode;
     _chatLogic = source._chatLogic;
+
+    _chatLogic->SetChatbotHandle(this);
+
     source._image = NULL;
     source._rootNode = nullptr;
     source._chatLogic = nullptr;
+
+    return *this;
 }
 
 ////
