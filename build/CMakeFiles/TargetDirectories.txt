@@ -1,0 +1,3 @@
+/Users/wantingzhang/MySandBox/cpp/Memory_Management_Chatbot/CppND-Memory-Management-Chatbot/build/CMakeFiles/rebuild_cache.dir
+/Users/wantingzhang/MySandBox/cpp/Memory_Management_Chatbot/CppND-Memory-Management-Chatbot/build/CMakeFiles/edit_cache.dir
+/Users/wantingzhang/MySandBox/cpp/Memory_Management_Chatbot/CppND-Memory-Management-Chatbot/build/CMakeFiles/membot.dir
