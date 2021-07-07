@@ -63,3 +63,7 @@ ChatBot Move Assignment Operator
 ChatBot Destructor
 ChatBot Destructor 
 ```
+
+## Troubleshooting
+follow this link to build wxWidget from source
+[https://github.com/wxWidgets/wxWidgets/blob/master/docs/gtk/install.md]
