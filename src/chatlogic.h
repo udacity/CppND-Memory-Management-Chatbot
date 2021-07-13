@@ -36,6 +36,7 @@ private:
     void AddAllTokensToElement(std::string tokenID, tokenlist &tokens, T &element);
 
 public:
+    std::string name = "This is ChatLogice public name";
     // constructor / destructor
     ChatLogic();
     ~ChatLogic();
