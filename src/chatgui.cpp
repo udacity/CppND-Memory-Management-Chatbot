@@ -119,13 +119,16 @@ ChatBotPanelDialog::ChatBotPanelDialog(wxWindow *parent, wxWindowID id)
 
     // create chat logic instance
    // _chatLogic = new ChatLogic(); 
-    //std::unique_ptr<ChatLogic> myChatLogicPointer(_chatLogic);
     _chatLogic = this->GetChatLogicHandle();
+    
     // pass pointer to chatbot dialog so answers can be displayed in GUI
     _chatLogic->SetPanelDialogHandle(this);
 
     // load answer graph from file
     _chatLogic->LoadAnswerGraphFromFile(dataPath + "src/answergraph.txt");
+
+     std::cout << "fun: _chatLogic.use_count() == " << _chatLogic.use_count() << '\n'; 
+
 
     ////
     //// EOF STUDENT CODE
@@ -135,7 +138,7 @@ ChatBotPanelDialog::~ChatBotPanelDialog()
 {
     //// STUDENT CODE
     ////
-
+    std::cout << "ChatBotPanelDialog Destructor" << std::endl;
     //delete _chatLogic;
 
     ////
