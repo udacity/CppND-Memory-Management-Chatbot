@@ -16,8 +16,7 @@
 
 <TYPE:NODE><ID:7><ANSWER:Static memory persists throughout the entire life of the program, and is usually used to store things like global variables, or variables created with the static clause. -- There are no more topics in this section, starting over!>
 
-
-// connect nodes with edges
+    // connect nodes with edges
 <TYPE:EDGE><ID:0><PARENT:0><CHILD:1><KEYWORD:pointer><KEYWORD:smart pointer>
 <TYPE:EDGE><ID:1><PARENT:0><CHILD:2><KEYWORD:memory model><KEYWORD:heap><KEYWORD:stack>
 
