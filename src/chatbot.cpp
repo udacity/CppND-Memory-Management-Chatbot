@@ -45,6 +45,91 @@ ChatBot::~ChatBot()
 //// STUDENT CODE
 ////
 
+// copy constructor
+ChatBot::ChatBot(const ChatBot &source){
+    // deep copy for owned data handle
+    _image = new wxBitmap;
+    *_image = *source._image;
+
+    // shallow copy for not owned data handle
+    _chatLogic = source._chatLogic;
+    _currentNode = source._currentNode;
+    _rootNode = source._rootNode;
+
+    std::cout << "ChatBot Copy Constructor" << std::endl;
+
+    // set ChatBot handle of ChatLogic to this
+    _chatLogic->SetChatbotHandle(this);
+}
+
+// copy assignment operator
+ChatBot &ChatBot::operator=(const ChatBot &source){
+    std::cout << "ChatBot Copy Assignment Operator" << std::endl;
+
+    if(this == &source){
+        return *this;
+    }
+
+    delete _image;
+    _image = new wxBitmap;
+    *_image = *source._image;
+
+    _chatLogic = source._chatLogic;
+    _currentNode = source._currentNode;
+    _rootNode = source._rootNode;
+
+    // set ChatBot handle of ChatLogic to this
+    _chatLogic->SetChatbotHandle(this);
+
+    return *this;
+};
+
+// move constructor
+ChatBot::ChatBot(ChatBot &&source){
+    std::cout << "ChatBot Move Constructor" << std::endl;
+
+    _image = source._image;
+    _chatLogic = source._chatLogic;
+    _currentNode = source._currentNode;
+    _rootNode = source._rootNode;
+
+    source._image = NULL;
+    source._chatLogic = nullptr;
+    source._currentNode = nullptr;
+    source._rootNode = nullptr;
+
+    // set ChatBot handle of ChatLogic to this
+    _chatLogic->SetChatbotHandle(this);
+}
+
+// move assign operator
+ChatBot &ChatBot::operator=(ChatBot &&source){
+    std::cout << "ChatBot Move Assign Operator" << std::endl;
+
+    if (this == &source)
+    {
+        return *this;
+    }
+
+    delete _image;
+    
+    _image = source._image;
+    _chatLogic = source._chatLogic;
+    _currentNode = source._currentNode;
+    _rootNode = source._rootNode;
+
+    source._image = NULL;
+    source._chatLogic = nullptr;
+    source._currentNode = nullptr;
+    source._rootNode = nullptr;
+
+    // set ChatBot handle of ChatLogic to this
+    _chatLogic->SetChatbotHandle(this);
+
+    return *this;
+};
+
+
 ////
 //// EOF STUDENT CODE
 
