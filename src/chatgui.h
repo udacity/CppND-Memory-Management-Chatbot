@@ -1,99 +1,97 @@
 #ifndef CHATGUI_H_
 #define CHATGUI_H_
 
+#include <memory>
 #include <wx/wx.h>
 
 class ChatLogic; // forward declaration
 
 // middle part of the window containing the dialog between user and chatbot
-class ChatBotPanelDialog : public wxScrolledWindow
-{
+class ChatBotPanelDialog : public wxScrolledWindow {
 private:
-    // control elements
-    wxBoxSizer *_dialogSizer;
-    wxBitmap _image;
+  // control elements
+  wxBoxSizer *_dialogSizer;
+  wxBitmap _image;
 
-    //// STUDENT CODE
-    ////
+  //// STUDENT CODE
+  ////
 
-    ChatLogic *_chatLogic;
+  // ChatLogic *_chatLogic;
+  std::shared_ptr<ChatLogic> _chatLogic;
 
-    ////
-    //// EOF STUDENT CODE
+  ////
+  //// EOF STUDENT CODE
 
 public:
-    // constructor / destructor
-    ChatBotPanelDialog(wxWindow *parent, wxWindowID id);
-    ~ChatBotPanelDialog();
+  // constructor / destructor
+  ChatBotPanelDialog(wxWindow *parent, wxWindowID id);
+  ~ChatBotPanelDialog();
 
-    // getter / setter
-    ChatLogic *GetChatLogicHandle() { return _chatLogic; }
+  // getter / setter
+  //   ChatLogic GetChatLogicHandle() { return _chatLogic; }
+  std::shared_ptr<ChatLogic> GetChatLogicHandle() { return _chatLogic; }
 
-    // events
-    void paintEvent(wxPaintEvent &evt);
-    void paintNow();
-    void render(wxDC &dc);
+  // events
+  void paintEvent(wxPaintEvent &evt);
+  void paintNow();
+  void render(wxDC &dc);
 
-    // proprietary functions
-    void AddDialogItem(wxString text, bool isFromUser = true);
-    void PrintChatbotResponse(std::string response);
+  // proprietary functions
+  void AddDialogItem(wxString text, bool isFromUser = true);
+  void PrintChatbotResponse(std::string response);
 
-    DECLARE_EVENT_TABLE()
+  DECLARE_EVENT_TABLE()
 };
 
 // dialog item shown in ChatBotPanelDialog
-class ChatBotPanelDialogItem : public wxPanel
-{
+class ChatBotPanelDialogItem : public wxPanel {
 private:
-    // control elements
-    wxStaticBitmap *_chatBotImg;
-    wxStaticText *_chatBotTxt;
+  // control elements
+  wxStaticBitmap *_chatBotImg;
+  wxStaticText *_chatBotTxt;
 
 public:
-    // constructor / destructor
-    ChatBotPanelDialogItem(wxPanel *parent, wxString text, bool isFromUser);
+  // constructor / destructor
+  ChatBotPanelDialogItem(wxPanel *parent, wxString text, bool isFromUser);
 };
 
 // frame containing all control elements
-class ChatBotFrame : public wxFrame
-{
+class ChatBotFrame : public wxFrame {
 private:
-    // control elements
-    ChatBotPanelDialog *_panelDialog;
-    wxTextCtrl *_userTextCtrl;
+  // control elements
+  ChatBotPanelDialog *_panelDialog;
+  wxTextCtrl *_userTextCtrl;
 
-    // events
-    void OnEnter(wxCommandEvent &WXUNUSED(event));
+  // events
+  void OnEnter(wxCommandEvent &WXUNUSED(event));
 
 public:
-    // constructor / desctructor
-    ChatBotFrame(const wxString &title);
+  // constructor / desctructor
+  ChatBotFrame(const wxString &title);
 };
 
 // control panel for background image display
-class ChatBotFrameImagePanel : public wxPanel
-{
-    // control elements
-    wxBitmap _image;
+class ChatBotFrameImagePanel : public wxPanel {
+  // control elements
+  wxBitmap _image;
 
 public:
-    // constructor / desctructor
-    ChatBotFrameImagePanel(wxFrame *parent);
+  // constructor / desctructor
+  ChatBotFrameImagePanel(wxFrame *parent);
 
-    // events
-    void paintEvent(wxPaintEvent &evt);
-    void paintNow();
-    void render(wxDC &dc);
+  // events
+  void paintEvent(wxPaintEvent &evt);
+  void paintNow();
+  void render(wxDC &dc);
 
-    DECLARE_EVENT_TABLE()
+  DECLARE_EVENT_TABLE()
 };
 
 // wxWidgets app that hides main()
-class ChatBotApp : public wxApp
-{
+class ChatBotApp : public wxApp {
 public:
-    // events
-    virtual bool OnInit();
+  // events
+  virtual bool OnInit();
 };
 
 #endif /* CHATGUI_H_ */
