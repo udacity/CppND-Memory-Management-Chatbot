@@ -30,6 +30,48 @@ ChatBot::ChatBot(std::string filename)
     _image = new wxBitmap(filename, wxBITMAP_TYPE_PNG);
 }
 
+ChatBot::ChatBot(const ChatBot &chatBot)
+{
+    std::cout << "ChatBot Copy Constructor";
+}
+
+ChatBot::ChatBot(ChatBot &&chatBot)
+{
+    std::cout << "ChatBot Move Constructor";
+}
+
+ChatBot &ChatBot::operator=(const ChatBot &chatBot)
+{
+    std::cout << "ChatBot Copy Assignment";
+    if (this == &chatBot)
+            return *this;
+
+    this->_currentNode = chatBot._currentNode;
+    this->_rootNode = chatBot._rootNode;
+    this->_chatLogic = chatBot._chatLogic;
+    this->_image = chatBot._image;
+    return *this;
+}
+
+ChatBot &ChatBot::operator=(ChatBot &&chatBot)
+{
+    std::cout << "ChatBot Move Assignmen";
+    if (this == &chatBot)
+            return *this;
+
+    this->_currentNode = chatBot._currentNode;
+    this->_rootNode = chatBot._rootNode;
+    this->_chatLogic = chatBot._chatLogic;
+    this->_image = chatBot._image;
+
+    chatBot._currentNode = nullptr;
+    chatBot._rootNode = nullptr;
+    chatBot._chatLogic = nullptr;
+    chatBot._image = nullptr;
+
+    return *this;    
+}
+
 ChatBot::~ChatBot()
 {
     std::cout << "ChatBot Destructor" << std::endl;
