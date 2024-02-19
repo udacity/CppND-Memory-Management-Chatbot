@@ -36,10 +36,10 @@ ChatLogic::~ChatLogic()
     delete _chatBot;
 
     // delete all nodes
-    for (auto it = std::begin(_nodes); it != std::end(_nodes); ++it)
-    {
-        delete *it;
-    }
+    // for (auto it = std::begin(_nodes); it != std::end(_nodes); ++it)
+    // {
+    //     delete *it;
+    // }
 
     // delete all edges
     for (auto it = std::begin(_edges); it != std::end(_edges); ++it)
@@ -161,8 +161,8 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
 
                             // create new edge
                             GraphEdge *edge = new GraphEdge(id);
-                            edge->SetChildNode(*childNode);
-                            edge->SetParentNode(*parentNode);
+                            edge->SetChildNode((*childNode).get());
+                            edge->SetParentNode((*parentNode).get());
                             _edges.push_back(edge);
 
                             // find all keywords for current node

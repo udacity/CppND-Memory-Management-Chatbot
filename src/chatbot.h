@@ -23,47 +23,20 @@ private:
 
 public:
     // constructors / destructors
-    ChatBot()
-    { 
-        std::cout << "ChatBot Constructor Called\n"; 
-    };                     // constructor WITHOUT memory allocation
-    ChatBot(std::string filename)
-    { 
-        std::cout << "ChatBot Constructor Called\n"; 
-    }; // constructor WITH memory allocation
-    ~ChatBot()
-    { 
-        std::cout << "ChatBot Destructor Called\n"; 
-    };
+    ChatBot();                   // constructor WITHOUT memory allocation
+    ChatBot(std::string filename);
+    ~ChatBot();
 
     //// STUDENT CODE
     ////
     // copy constructor
-    ChatBot(const ChatBot &source) 
-    { 
-        std::cout << "ChatBot Copy Constructor Called\n"; 
-    };
+    ChatBot(const ChatBot &source);
     // copy assignment operator
-    ChatBot& operator=(const ChatBot& source)
-    {
-        std::cout << "ChatBot Copy Assignment Operator Called\n";
-        if (this == &source)
-            return *this;
-        return *this;
-    };
+    ChatBot& operator=(const ChatBot& source);
     // move constructor
-    ChatBot(ChatBot&& source)
-    { 
-        std::cout << "ChatBot Move Constructor Called\n"; 
-    };
+    ChatBot(ChatBot&& source);
     // move assignment operator
-    ChatBot &operator=(ChatBot &&source) 
-    {
-        std::cout << "ChatBot Move Assignment Operator Called\n";
-        if (this == &source)
-            return *this;
-        return *this;
-    }    
+    ChatBot &operator=(ChatBot &&source);   
     ////
     //// EOF STUDENT CODE
 
