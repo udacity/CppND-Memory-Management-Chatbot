@@ -17,6 +17,8 @@ private:
     ////
 
     //ChatLogic *_chatLogic;
+    // _chatLogic is a unique resource in the ChatLogic class. 
+    // When an instance of ChatLogic is destroyed, the ChatLogic object pointed to by _chatLogic will be automatically deleted.
     std::unique_ptr<ChatLogic> _chatLogic;
 
     ////
