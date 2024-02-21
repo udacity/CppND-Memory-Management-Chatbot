@@ -29,18 +29,17 @@ public:
 
     //// STUDENT CODE
     ////
-    // copy constructor
-    ChatBot(const ChatBot &source);
-    // copy assignment operator
-    ChatBot& operator=(const ChatBot& source);
-    // move constructor
-    ChatBot(ChatBot&& source);
-    // move assignment operator
-    ChatBot &operator=(ChatBot &&source);   
 
-    ChatLogic* GetChatLogic() { return _chatLogic; }
+    ChatBot(const ChatBot& other);              // Copy Constructor
+    ChatBot(ChatBot&& other);                   // Move Constructor
+    ChatBot& operator=(const ChatBot& other);   // Copy Assignment operator
+    ChatBot& operator=(ChatBot&& other);        // Move Assignment operator
+
+    ChatLogic* getChatLogic() { return std::move(_chatLogic); }
+
     ////
     //// EOF STUDENT CODE
+
 
     // getters / setters
     void SetCurrentNode(GraphNode *node);
