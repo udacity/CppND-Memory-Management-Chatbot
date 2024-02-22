@@ -30,13 +30,16 @@ public:
     //// STUDENT CODE
     ////
 
-    ChatBot(const ChatBot& other);              // Copy Constructor
-    ChatBot(ChatBot&& other);                   // Move Constructor
-    ChatBot& operator=(const ChatBot& other);   // Copy Assignment operator
-    ChatBot& operator=(ChatBot&& other);        // Move Assignment operator
+    // copy constructor
+    ChatBot(const ChatBot &source);
+    // copy assignment operator
+    ChatBot& operator=(const ChatBot& source);
+    // move constructor
+    ChatBot(ChatBot&& source);
+    // move assignment operator
+    ChatBot &operator=(ChatBot &&source);   
 
-    ChatLogic* getChatLogic() { return std::move(_chatLogic); }
-
+    ChatLogic* GetChatLogic() { return _chatLogic; }    
     ////
     //// EOF STUDENT CODE
 

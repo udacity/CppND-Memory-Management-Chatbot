@@ -774,3 +774,197 @@ make: *** [Makefile:127: cmTC_9df0f/fast] Error 2
 
 
 
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /mnt/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+gcc.exe: fatal error: -fuse-linker-plugin, but liblto_plugin-0.dll not found
+compilation terminated.
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /mnt/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/g++.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+g++.exe: fatal error: -fuse-linker-plugin, but liblto_plugin-0.dll not found
+compilation terminated.
+
+
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /home/xiongyu1988/CppND-Memory-Management-Chatbot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_15ab0/fast && /usr/bin/make  -f CMakeFiles/cmTC_15ab0.dir/build.make CMakeFiles/cmTC_15ab0.dir/build
+make[1]: Entering directory '/home/xiongyu1988/CppND-Memory-Management-Chatbot/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_15ab0.dir/CMakeCCompilerABI.c.o
+"/mnt/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe"   -v -o CMakeFiles/cmTC_15ab0.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.20/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=gcc.exe
+Target: x86_64-w64-mingw32
+Configured with: ../../../src/gcc-8.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpc=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-isl=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/lib -L/c/mingw810/prerequisites/x86_64-zlib-static/lib -L/c/mingw810/prerequisites/x86_64-w64-mingw32-static/lib '
+Thread model: posix
+gcc version 8.1.0 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_15ab0.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=core2' '-march=nocona'
+ cc1 -quiet -v -iprefix c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/ -D_REENTRANT /usr/share/cmake-3.20/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=core2 -march=nocona -auxbase-strip CMakeFiles/cmTC_15ab0.dir/CMakeCCompilerABI.c.o -version -o C:\Users\xiong\AppData\Local\Temp\ccoOKFk5.s
+GNU C17 (GCC) version 10.2.0 (x86_64-w64-mingw32)
+	compiled by GNU C version 9.0.1 20190310 (experimental), GMP version 6.1.2, MPFR version 3.1.4, MPC version 1.0.3, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"
+ignoring nonexistent directory "c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
+ignoring nonexistent directory "/home/gfortran/gcc-home/binary/mingw32/cross/x86_64/gcc/9-20190310/home/gfortran/gcc-home/binary/mingw32/native/x86_64/gcc/10.2.0/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"
+ignoring duplicate directory "c:/tdm-gcc-64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"
+ignoring nonexistent directory "/home/gfortran/gcc-home/binary/mingw32/cross/x86_64/gcc/9-20190310/mingw/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include
+ c:/tdm-gcc-64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.2.0/include
+ c:/tdm-gcc-64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed
+End of search list.
+GNU C17 (GCC) version 10.2.0 (x86_64-w64-mingw32)
+	compiled by GNU C version 9.0.1 20190310 (experimental), GMP version 6.1.2, MPFR version 3.1.4, MPC version 1.0.3, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 6dbf2892fa825fffd6e249e2aae5723a
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_15ab0.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=core2' '-march=nocona'
+ c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_15ab0.dir/CMakeCCompilerABI.c.o C:\Users\xiong\AppData\Local\Temp\ccoOKFk5.s
+GNU assembler version 2.27 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.27
+COMPILER_PATH=c:/tdm-gcc-64/bin/../libexec/gcc/;c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/
+LIBRARY_PATH=c:/tdm-gcc-64/bin/../lib/gcc/;c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../lib/;c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/;c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_15ab0.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=core2' '-march=nocona'
+Linking C executable cmTC_15ab0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15ab0.dir/link.txt --verbose=1
+"/mnt/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe"  -v CMakeFiles/cmTC_15ab0.dir/CMakeCCompilerABI.c.o -o cmTC_15ab0 
+Using built-in specs.
+COLLECT_GCC=gcc.exe
+Target: x86_64-w64-mingw32
+Configured with: ../../../src/gcc-8.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpc=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-isl=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/lib -L/c/mingw810/prerequisites/x86_64-zlib-static/lib -L/c/mingw810/prerequisites/x86_64-w64-mingw32-static/lib '
+Thread model: posix
+gcc version 8.1.0 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 
+gcc.exe: fatal error: -fuse-linker-plugin, but liblto_plugin-0.dll not found
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_15ab0.dir/build.make:99: cmTC_15ab0] Error 1
+make[1]: Leaving directory '/home/xiongyu1988/CppND-Memory-Management-Chatbot/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_15ab0/fast] Error 2
+
+
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: /home/xiongyu1988/CppND-Memory-Management-Chatbot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_d616a/fast && /usr/bin/make  -f CMakeFiles/cmTC_d616a.dir/build.make CMakeFiles/cmTC_d616a.dir/build
+make[1]: Entering directory '/home/xiongyu1988/CppND-Memory-Management-Chatbot/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d616a.dir/testCCompiler.c.o
+"/mnt/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe"    -o CMakeFiles/cmTC_d616a.dir/testCCompiler.c.o -c /home/xiongyu1988/CppND-Memory-Management-Chatbot/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_d616a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d616a.dir/link.txt --verbose=1
+"/mnt/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe" CMakeFiles/cmTC_d616a.dir/testCCompiler.c.o -o cmTC_d616a 
+gcc.exe: fatal error: -fuse-linker-plugin, but liblto_plugin-0.dll not found
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_d616a.dir/build.make:99: cmTC_d616a] Error 1
+make[1]: Leaving directory '/home/xiongyu1988/CppND-Memory-Management-Chatbot/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_d616a/fast] Error 2
+
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /mnt/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+gcc.exe: fatal error: -fuse-linker-plugin, but liblto_plugin-0.dll not found
+compilation terminated.
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /mnt/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/g++.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+g++.exe: fatal error: -fuse-linker-plugin, but liblto_plugin-0.dll not found
+compilation terminated.
+
+
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /home/xiongyu1988/CppND-Memory-Management-Chatbot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_ab6b7/fast && /usr/bin/make  -f CMakeFiles/cmTC_ab6b7.dir/build.make CMakeFiles/cmTC_ab6b7.dir/build
+make[1]: Entering directory '/home/xiongyu1988/CppND-Memory-Management-Chatbot/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ab6b7.dir/CMakeCCompilerABI.c.o
+"/mnt/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe"   -v -o CMakeFiles/cmTC_ab6b7.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.20/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=gcc.exe
+Target: x86_64-w64-mingw32
+Configured with: ../../../src/gcc-8.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpc=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-isl=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/lib -L/c/mingw810/prerequisites/x86_64-zlib-static/lib -L/c/mingw810/prerequisites/x86_64-w64-mingw32-static/lib '
+Thread model: posix
+gcc version 8.1.0 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ab6b7.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=core2' '-march=nocona'
+ cc1 -quiet -v -iprefix c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/ -D_REENTRANT /usr/share/cmake-3.20/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=core2 -march=nocona -auxbase-strip CMakeFiles/cmTC_ab6b7.dir/CMakeCCompilerABI.c.o -version -o C:\Users\xiong\AppData\Local\Temp\ccs1grGd.s
+GNU C17 (GCC) version 10.2.0 (x86_64-w64-mingw32)
+	compiled by GNU C version 9.0.1 20190310 (experimental), GMP version 6.1.2, MPFR version 3.1.4, MPC version 1.0.3, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"
+ignoring nonexistent directory "c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
+ignoring nonexistent directory "/home/gfortran/gcc-home/binary/mingw32/cross/x86_64/gcc/9-20190310/home/gfortran/gcc-home/binary/mingw32/native/x86_64/gcc/10.2.0/lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"
+ignoring duplicate directory "c:/tdm-gcc-64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"
+ignoring nonexistent directory "/home/gfortran/gcc-home/binary/mingw32/cross/x86_64/gcc/9-20190310/mingw/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include
+ c:/tdm-gcc-64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.2.0/include
+ c:/tdm-gcc-64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed
+End of search list.
+GNU C17 (GCC) version 10.2.0 (x86_64-w64-mingw32)
+	compiled by GNU C version 9.0.1 20190310 (experimental), GMP version 6.1.2, MPFR version 3.1.4, MPC version 1.0.3, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 6dbf2892fa825fffd6e249e2aae5723a
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ab6b7.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=core2' '-march=nocona'
+ c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_ab6b7.dir/CMakeCCompilerABI.c.o C:\Users\xiong\AppData\Local\Temp\ccs1grGd.s
+GNU assembler version 2.27 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.27
+COMPILER_PATH=c:/tdm-gcc-64/bin/../libexec/gcc/;c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/
+LIBRARY_PATH=c:/tdm-gcc-64/bin/../lib/gcc/;c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../lib/;c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/;c:/tdm-gcc-64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ab6b7.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=core2' '-march=nocona'
+Linking C executable cmTC_ab6b7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ab6b7.dir/link.txt --verbose=1
+"/mnt/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe"  -v CMakeFiles/cmTC_ab6b7.dir/CMakeCCompilerABI.c.o -o cmTC_ab6b7 
+Using built-in specs.
+COLLECT_GCC=gcc.exe
+Target: x86_64-w64-mingw32
+Configured with: ../../../src/gcc-8.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpc=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-isl=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/lib -L/c/mingw810/prerequisites/x86_64-zlib-static/lib -L/c/mingw810/prerequisites/x86_64-w64-mingw32-static/lib '
+Thread model: posix
+gcc version 8.1.0 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 
+gcc.exe: fatal error: -fuse-linker-plugin, but liblto_plugin-0.dll not found
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_ab6b7.dir/build.make:99: cmTC_ab6b7] Error 1
+make[1]: Leaving directory '/home/xiongyu1988/CppND-Memory-Management-Chatbot/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_ab6b7/fast] Error 2
+
+
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: /home/xiongyu1988/CppND-Memory-Management-Chatbot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_af34f/fast && /usr/bin/make  -f CMakeFiles/cmTC_af34f.dir/build.make CMakeFiles/cmTC_af34f.dir/build
+make[1]: Entering directory '/home/xiongyu1988/CppND-Memory-Management-Chatbot/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_af34f.dir/testCCompiler.c.o
+"/mnt/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe"    -o CMakeFiles/cmTC_af34f.dir/testCCompiler.c.o -c /home/xiongyu1988/CppND-Memory-Management-Chatbot/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_af34f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af34f.dir/link.txt --verbose=1
+"/mnt/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe" CMakeFiles/cmTC_af34f.dir/testCCompiler.c.o -o cmTC_af34f 
+gcc.exe: fatal error: -fuse-linker-plugin, but liblto_plugin-0.dll not found
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_af34f.dir/build.make:99: cmTC_af34f] Error 1
+make[1]: Leaving directory '/home/xiongyu1988/CppND-Memory-Management-Chatbot/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_af34f/fast] Error 2
+
+
+
